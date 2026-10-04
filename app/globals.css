@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: #f6f7f3;
+  --color-surface: #ffffff;
+  --color-ink: #17302a;
+  --color-ink-muted: #5c6b65;
+  --color-line: #e3e6df;
+  --color-leaf: #1e5b43;
+  --color-leaf-tint: #e4efe8;
+  --color-turmeric: #d99a12;
+  --color-turmeric-tint: #fbf1d6;
+  --color-brick: #b3402b;
+  --color-brick-tint: #f8e3de;
+  --font-heading: var(--font-heading), var(--font-devanagari), ui-sans-serif, system-ui;
+  --font-sans: var(--font-body), var(--font-devanagari), ui-sans-serif, system-ui;
+  --radius-md: 8px;
+  --radius-sheet: 20px;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-leaf);
+  outline-offset: 2px;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes tag-drop {
+  0% {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 0;
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  65% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 40vh) scale(0.8);
+    opacity: 0;
+  }
+}
+
+.animate-tag-drop {
+  animation: tag-drop 450ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
