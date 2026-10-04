@@ -1,4 +1,4 @@
-# Stockeye
+<h1 align="center">Stockeye</h1>
 
 <div align="center">
 
